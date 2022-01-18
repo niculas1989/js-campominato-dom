@@ -38,22 +38,7 @@ function createParticularCell(number, difficulty) {
     }
 }
 
-
-
-
-//! ------------------------------------------------------
-//! EFFETTIVO SVOLGIMENTO DEL PROGRAMMA
-//! ------------------------------------------------------
-
-
-// generazioni costanti
-const difficulty = document.getElementById('difficulty');
-const resultElement = document.getElementById('result');
-const button = document.getElementById('button');
-
-
-
-button.addEventListener('click', function () {
+const play = () => {
     button.innerText = ('RIGIOCA');
     resultElement.innerText = '';
 
@@ -70,7 +55,24 @@ button.addEventListener('click', function () {
         default:
             alert('Devi scegliere una delle difficoltà!');
     }
-})
+}
+
+
+
+
+//! ------------------------------------------------------
+//! EFFETTIVO SVOLGIMENTO DEL PROGRAMMA
+//! ------------------------------------------------------
+
+
+// generazioni costanti
+const difficulty = document.getElementById('difficulty');
+const resultElement = document.getElementById('result');
+const button = document.getElementById('button');
+
+
+
+button.addEventListener('click', play);
 
 
 
