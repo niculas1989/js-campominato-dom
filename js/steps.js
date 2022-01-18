@@ -4,7 +4,7 @@
 // aggancio un event listener
 
 // ! Dentro la funzione play
-// Cambio il trsto del bottone 'gioca' => 'rigioca'
+// Cambio il testo del bottone 'gioca' => 'rigioca'
 // svuoto eventuale contenuto di #result
 
 //! FASE PREPARATIVA
