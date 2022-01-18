@@ -1,0 +1,24 @@
+.cell {
+    /* height: 100px;
+    width: 100px; */
+    font-size: 24px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.cell.d-one {
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+}
+.cell.d-two {
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+.cell.d-three {
+    height: calc(100% / 7);
+    width: calc(100% / 7);
+}
+
+.clicked {
+    background-color: dodgerblue;
+}
