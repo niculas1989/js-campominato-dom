@@ -18,6 +18,11 @@ BONUS:
 //! Suddivisione steb-by-step
 //! Creazione funzioni utili
 
+// Randomizzare il numero
+const getRandomNumber = (numb) => {
+    return Math.floor(Math.random() * numb) + 1;
+}
+
 // Funzione per creare le celle
 function createCell(num) {
     const cell = document.createElement('div');
@@ -59,6 +64,9 @@ const play = () => {
     const MAX_BOMBS = 16;
     let attemps = 0;
     const bombs = []; //lista bombe
+
+
+
 
 }
 

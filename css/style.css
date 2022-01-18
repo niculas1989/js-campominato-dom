@@ -1,10 +1,12 @@
 main {
     background-color: #000;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 #result {
-    padding-top: 100px;
     height: 600px;
     width: 600px;
 }
