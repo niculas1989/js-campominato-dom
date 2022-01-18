@@ -56,6 +56,9 @@ const play = () => {
             alert('Devi scegliere una delle difficoltà!');
     }
 
+    const MAX_BOMBS = 16;
+    let attemps = 0;
+    const bombs = []; //lista bombe
 
 }
 

@@ -8,13 +8,13 @@
 // svuoto eventuale contenuto di #result (CHECK)
 
 //! FASE PREPARATIVA
-// Settare che le bombe sono 16
-// Raccogliamo il livello dalla tendina
-// Calcolo, in base al livello scelto, quante celle devo renderizzare
-// Inserisco una variabile per contare i punti
+// Settare che le bombe sono 16 (CHECK)
+// Raccogliamo il livello dalla tendina (CHECK)
+// Calcolo, in base al livello scelto, quante celle devo renderizzare (CHECK)
+// Inserisco una variabile per contare i punti (CHECK)
 // Calcolo, in base al livello scelto, quante sono le celle safe
-// Generare i numeri delle bombe
-// Renderizzare la griglia (creare le celle (assegnare classe, ecc))
+// Generare i numeri delle bombe (CHECK)
+// Renderizzare la griglia (creare le celle (assegnare classe, ecc)) (CHECK)
 // Aggiungiamo l'event listener alle celle
 
 //! Quando una cella è cliccata
