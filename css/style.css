@@ -1,9 +1,21 @@
+main {
+    background-color: #000;
+}
+
+#result {
+    height: 600px;
+    width: 600px;
+}
+
 .cell {
     /* height: 100px;
     width: 100px; */
+    color: white;
     font-size: 24px;
-    border: 2px solid black;
-    text-align: center;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cell.d-one {
@@ -21,4 +33,12 @@
 
 .clicked {
     background-color: dodgerblue;
+}
+
+.safe {
+    background-color: green;
+}
+
+.bomb {
+    background-color: red;
 }
