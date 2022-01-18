@@ -55,6 +55,8 @@ const play = () => {
         default:
             alert('Devi scegliere una delle difficoltà!');
     }
+
+
 }
 
 

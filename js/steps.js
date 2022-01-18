@@ -1,11 +1,11 @@
 // ! FASE INIZIALE
 
-// prendo il bottone
-// aggancio un event listener
+// prendo il bottone (CHECK)
+// aggancio un event listener (CHECK)
 
 // ! Dentro la funzione play
-// Cambio il testo del bottone 'gioca' => 'rigioca'
-// svuoto eventuale contenuto di #result
+// Cambio il testo del bottone 'gioca' => 'rigioca' (CHECK)
+// svuoto eventuale contenuto di #result (CHECK)
 
 //! FASE PREPARATIVA
 // Settare che le bombe sono 16
