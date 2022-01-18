@@ -54,6 +54,9 @@ const button = document.getElementById('button');
 
 
 button.addEventListener('click', function () {
+    button.innerText = ('RIGIOCA');
+    resultElement.innerText = '';
+
     switch (difficulty.value) {
         case '1':
             createParticularCell(100, 'd-one');
