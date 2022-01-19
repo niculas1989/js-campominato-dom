@@ -12,21 +12,30 @@ BONUS:
 1- quando si clicca su una bomba e finisce la partita, il software scopre tutte le bombe nascoste
 2- quando si clicca su una bomba e finisce la partita, evitare che si possa cliccare su altre celle
 */
+
 //* FUNZIONI DA UTILIZZARE
+
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+
 // RECUPERO LA GRIGLIA
 const select = document.getElementById("difficulty");
 const grid = document.getElementById("result");
 const button = document.getElementById("button");
+
 function start() {
     // Cambio il tasto del bottone e lo chiamo ricomincia
     button.innerText = 'RESTART'
+
     grid.innerHTML = '';
     grid.style.display = 'flex';
+
     // Preparo quello che mi serve per il gioco 
     let attempts = 0;
     const totalBombs = 16;
+
     let columns;
+
     switch (select.value) {
         case "2":
             columns = 9;
@@ -38,8 +47,12 @@ function start() {
             columns = 10;
             break;
     }
+
     const totalCells = columns * columns;
+
     const maxAttempts = totalCells - totalBombs;
+    let bombs = [];
+
     // GENERO UNA BOMBA
     const generateBombs = (totalBombs, totalNumber) => {
         const bombs = [];
@@ -51,17 +64,20 @@ function start() {
         }
         return bombs;
     }
+
     // GENERO LA GRIGLIA
     const generateGrid = (cellsNumber, cellsPerRow, bombs) => {
         for (let i = 1; i <= cellsNumber; i++) {
             const cell = createCell(i, cellsPerRow);
-            cell.addEventListener('click', (event) => onCellClick(event.target, bombs, i));
+            cell.addEventListener('click', onCellClick);
             grid.appendChild(cell);
         }
     }
+
     // CREO LA CELLA
     function createCell(cellNumber, cellsPerRow) {
         const cell = document.createElement("div");
+        cell.id = cellNumber;
         cell.className = "cell";
         cell.innerText = cellNumber;
         const wh = `calc(100% / ${cellsPerRow})`;
@@ -69,34 +85,47 @@ function start() {
         cell.style.width = wh;
         return cell;
     }
+
     // Gestisco l'evento al click
-    function onCellClick(clickedCell, bombs, number) {
-        clickedCell.removeEventListener("click", onCellClick);
-        console.log('ciao');
+    function onCellClick(event) {
+        const cell = event.target;
+        cell.removeEventListener("click", onCellClick);
+
         // Controllo se è una bomba
+        let number = parseInt(cell.id);
+
         if (bombs.includes(number)) {
             gameOver(bombs, attempts, true);
         } else {
-            clickedCell.classList.add("safe")
+            cell.classList.add("safe")
             attempts++;
             if (attempts === maxAttempts) {
                 gameOver(bombs, attempts, false);
             }
         }
     }
+
     // FINE PARTITA
     const gameOver = (bombs, attempts, hasLost) => {
         const allCells = grid.querySelectorAll('.cell');
+
         for (let i = 0; i < allCells.length; i++) {
             allCells[i].removeEventListener('click', onCellClick);
         }
+
         showBoms(bombs);
+
         const message = document.createElement('h2');
         message.className = 'message';
-        const messageText = hasLost ? `HAI PERSO, RIPROVA (questo è il tuo punteggio ${attempts})` : `HAI VINTO!`
+
+        const messageText = hasLost ? `HAI PERSO, RIPROVA (questo è il tuo punteggio ${attempts})` : `HAI VINTO!!!!!!!!`
         message.innerText = messageText;
         grid.appendChild(message);
+
+
+
     }
+
     const showBoms = (bombs) => {
         const cells = document.querySelectorAll('.cell');
         for (let i = 0; i < totalCells; i++) {
@@ -107,9 +136,14 @@ function start() {
             }
         }
     }
+
+
     // Esecuzione
-    const bombs = generateBombs(totalBombs, totalCells)
+
+    bombs = generateBombs(totalBombs, totalCells)
     console.log(bombs);
+
     generateGrid(totalCells, columns, bombs);
 }
+
 button.addEventListener("click", () => start());
