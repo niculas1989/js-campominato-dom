@@ -93,7 +93,7 @@ function start() {
         showBoms(bombs);
         const message = document.createElement('h2');
         message.className = 'message';
-        const messageText = hasLost ? `HAI PERSO, RIPROVA (questo è il tuo punteggio ${attempts})` : `HAI VINTO!!!!!!!!`
+        const messageText = hasLost ? `HAI PERSO, RIPROVA (questo è il tuo punteggio ${attempts})` : `HAI VINTO!`
         message.innerText = messageText;
         grid.appendChild(message);
     }

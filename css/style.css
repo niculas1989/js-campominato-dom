@@ -23,27 +23,14 @@ main {
     cursor: pointer;
 }
 
-.cell.d-one {
-    height: calc(100% / 10);
-    width: calc(100% / 10);
-}
-.cell.d-two {
-    height: calc(100% / 9);
-    width: calc(100% / 9);
-}
-.cell.d-three {
-    height: calc(100% / 7);
-    width: calc(100% / 7);
-}
-
-.clicked {
-    background-color: dodgerblue;
-}
-
 .safe {
     background-color: green;
 }
 
 .bomb {
     background-color: red;
+}
+
+h2 {
+    color: lightblue;
 }
